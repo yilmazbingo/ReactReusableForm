@@ -1,11 +1,14 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/app.js",
+  entry: { main: "./src/app.js" },
   output: {
-    path: path.join(__dirname, "public"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, "public"),
+    filename: "[name]-bundle.js",
+    publicPath: "/"
   },
+  mode: "development",
   module: {
     rules: [
       {
@@ -19,9 +22,12 @@ module.exports = {
       }
     ]
   },
-  devtool: "cheap-module-eval-source-map",
+  // devtool: "cheap-module-eval-source-map",
   devServer: {
+    //contentBase lets tell the devs server where it can find our public file.
     contentBase: path.join(__dirname, "public"),
+    // HistoryApiFallback tells devserver that we are going to be handling routing via our client side code.
     historyApiFallback: true
-  }
+  },
+  plugins: [new webpack.EvalSourceMapDevToolPlugin()]
 };

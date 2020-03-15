@@ -11,14 +11,3 @@ const NotFound = () => (
 );
 
 export default NotFound;
-
-let name = "tara";
-if (true) {
-  if (true) {
-    let name = "ali";
-    console.log(name);
-  }
-}
-if (true) {
-  console.log(name);
-}
