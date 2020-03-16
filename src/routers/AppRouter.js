@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import Login from "../components/Login";
-import Header from "../components/Header";
+import Login from "../pages/Login";
+// import Header from "../pages/components/Header";
 import NavBar from "../components/NavBar";
-import Home from "../components/Home";
-import NotFound from "../components/NotFound";
+import Home from "../pages/Home";
+import NotFound from "../pages/NotFound";
 
 const AppRouter = () => (
   <BrowserRouter>
